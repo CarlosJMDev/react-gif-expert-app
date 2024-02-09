@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 //*Primero importaciones de react
 // import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 //* Importaciones de componentes o Hooks
 import { GifItem } from "./GifItem";
@@ -19,9 +19,9 @@ export const GifGrid = ({category}) => {
   return (
     <>
       <h3>{ category }</h3>
-      {
+      {/* {
         isLoading ? ( <h2 >Cargando...</h2> ) : null
-      }
+      } */}
       {
         isLoading && ( <h2 >Cargando...</h2> )
       }
@@ -41,4 +41,9 @@ export const GifGrid = ({category}) => {
       </div>
     </>
   )
+}
+
+
+GifGrid.propTypes = {
+  category: PropTypes.string.isRequired
 }
